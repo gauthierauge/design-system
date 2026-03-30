@@ -1,13 +1,17 @@
-name: Deploy Registry to GitHub Pages
+name: Deploy Registry & Storybook to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [develop]
     paths:
       - "registry/**"
       - "registry.json"
       - "components/**"
       - "lib/**"
+      - "stories/**"
+      - ".storybook/**"
+      - "app/globals.css"
+      - "packages/tailwind-preset/**"
 
 permissions:
   contents: read
@@ -33,6 +37,9 @@ jobs:
 
       - name: Build registry
         run: npx shadcn build
+
+      - name: Build Storybook
+        run: npx storybook build -o public/storybook
 
       - uses: actions/upload-pages-artifact@v3
         with:

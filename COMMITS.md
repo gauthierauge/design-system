@@ -9,3 +9,4 @@ Raw log of all commits on this repository.
 | 2026-03-30 | 5b8220f | chore: add .agents, .idea and .DS_Store to gitignore |
 | 2026-03-30 | 1321e72 | feat: add Storybook with stories for all registry components |
 | 2026-03-30 | 53cd516 | fix: add @tailwindcss/vite plugin for Storybook CSS processing |
+| 2026-03-30 | 95a3ed3 | chore(ci): add Storybook to Pages deploy and fix branch to develop |
