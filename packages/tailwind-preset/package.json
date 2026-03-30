@@ -1,0 +1,33 @@
+{
+  "name": "@gauthierauge/tailwind-preset",
+  "version": "0.1.0",
+  "description": "Shared Tailwind CSS design tokens for all projects",
+  "main": "preset.js",
+  "exports": {
+    ".": "./preset.js",
+    "./preset": "./preset.js",
+    "./theme.css": "./theme.css",
+    "./v3": "./src/v3/preset.js",
+    "./v4": "./src/v4/theme.css"
+  },
+  "files": [
+    "preset.js",
+    "theme.css",
+    "src/"
+  ],
+  "keywords": [
+    "tailwindcss",
+    "design-tokens",
+    "preset"
+  ],
+  "author": "gauthierauge",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gauthierauge/design-system.git",
+    "directory": "packages/tailwind-preset"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}

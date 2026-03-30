@@ -1,0 +1,77 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "gauthierauge-ds",
+  "homepage": "https://gauthierauge.github.io/design-system",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:block",
+      "title": "Button",
+      "description": "Custom button with success, warning variants and xs/icon sizes.",
+      "files": [
+        {
+          "path": "registry/new-york/blocks/button/button.tsx",
+          "type": "registry:component",
+          "target": "components/atoms/button.tsx"
+        }
+      ],
+      "dependencies": ["class-variance-authority", "radix-ui"],
+      "registryDependencies": []
+    },
+    {
+      "name": "card",
+      "type": "registry:block",
+      "title": "Card",
+      "description": "Custom card component.",
+      "files": [
+        {
+          "path": "registry/new-york/blocks/card/card.tsx",
+          "type": "registry:component",
+          "target": "components/atoms/card.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "input",
+      "type": "registry:block",
+      "title": "Input",
+      "description": "Custom input component.",
+      "files": [
+        {
+          "path": "registry/new-york/blocks/input/input.tsx",
+          "type": "registry:component",
+          "target": "components/atoms/input.tsx"
+        }
+      ],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    {
+      "name": "page-layout",
+      "type": "registry:block",
+      "title": "Page Layout",
+      "description": "Full page layout with header and sidebar.",
+      "files": [
+        {
+          "path": "registry/new-york/blocks/page-layout/page.tsx",
+          "type": "registry:component",
+          "target": "components/organisms/page-layout/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/page-layout/components/header.tsx",
+          "type": "registry:component",
+          "target": "components/organisms/page-layout/components/header.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/page-layout/components/sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/organisms/page-layout/components/sidebar.tsx"
+        }
+      ],
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"]
+    }
+  ]
+}

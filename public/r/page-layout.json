@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "page-layout",
+  "title": "Page Layout",
+  "description": "Full page layout with header and sidebar.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/blocks/page-layout/page.tsx",
+      "content": "import type * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Header } from \"./components/header\";\nimport { Sidebar } from \"./components/sidebar\";\n\ninterface PageLayoutProps {\n  children: React.ReactNode;\n  sidebar?: React.ReactNode;\n  header?: React.ReactNode;\n  className?: string;\n}\n\nfunction PageLayout({ children, sidebar, header, className }: PageLayoutProps) {\n  return (\n    <div className={cn(\"flex min-h-svh\", className)}>\n      {sidebar ?? <Sidebar />}\n      <div className=\"flex flex-1 flex-col\">\n        {header ?? <Header />}\n        <main className=\"flex-1 p-6\">{children}</main>\n      </div>\n    </div>\n  );\n}\n\nexport { PageLayout };\nexport type { PageLayoutProps };\n",
+      "type": "registry:component",
+      "target": "components/organisms/page-layout/page.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/page-layout/components/header.tsx",
+      "content": "import type * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\ninterface HeaderProps extends React.ComponentProps<\"header\"> {\n  left?: React.ReactNode;\n  right?: React.ReactNode;\n}\n\nfunction Header({ className, left, right, children, ...props }: HeaderProps) {\n  return (\n    <header\n      data-slot=\"header\"\n      className={cn(\n        \"flex h-14 items-center gap-4 border-b bg-background px-6\",\n        className\n      )}\n      {...props}\n    >\n      {left && <div className=\"flex items-center gap-2\">{left}</div>}\n      <div className=\"flex-1\">{children}</div>\n      {right && (\n        <div className=\"flex items-center gap-2\">{right}</div>\n      )}\n    </header>\n  );\n}\n\nexport { Header };\nexport type { HeaderProps };\n",
+      "type": "registry:component",
+      "target": "components/organisms/page-layout/components/header.tsx"
+    },
+    {
+      "path": "registry/new-york/blocks/page-layout/components/sidebar.tsx",
+      "content": "import type * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\ninterface SidebarProps extends React.ComponentProps<\"aside\"> {\n  collapsed?: boolean;\n}\n\nfunction Sidebar({\n  className,\n  collapsed = false,\n  children,\n  ...props\n}: SidebarProps) {\n  return (\n    <aside\n      data-slot=\"sidebar\"\n      className={cn(\n        \"flex flex-col border-r bg-sidebar text-sidebar-foreground transition-[width] duration-200\",\n        collapsed ? \"w-16\" : \"w-64\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </aside>\n  );\n}\n\nexport { Sidebar };\nexport type { SidebarProps };\n",
+      "type": "registry:component",
+      "target": "components/organisms/page-layout/components/sidebar.tsx"
+    }
+  ],
+  "type": "registry:block"
+}
